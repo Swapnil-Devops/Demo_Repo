@@ -1,18 +1,26 @@
-name: Manual Workflow Trigger
+name: Generate Response
 
 on:
-  workflow_dispatch: # Manually trigger the workflow
+  workflow_dispatch:
 
 jobs:
-  sample_job:
+  generate-response:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: npm install
 
       - name: chatgpt
         id: chatgpt
         uses: Swapnil-Devops/openai-gpt3-action@main
         with:
-          API_KEY: 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
-          PROMPT: what is GitHub?
+          prompt: "what is github action"
