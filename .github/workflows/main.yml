@@ -1,7 +1,7 @@
 name: Manual Workflow Trigger
 
 on:
-  workflow_dispatch:  # Manually trigger the workflow
+  workflow_dispatch: # Manually trigger the workflow
 
 jobs:
   sample_job:
@@ -10,7 +10,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Print message
-        run: echo "This workflow was manually triggered."
-
-    
+      - name: chatgpt
+        id: chatgpt
+        uses: Swapnil-Devops/openai-gpt3-action@main
+        with:
+          API_KEY: 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
+          PROMPT: what is GitHub?
