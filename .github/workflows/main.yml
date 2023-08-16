@@ -21,7 +21,7 @@ jobs:
 
       - name: chatgpt
         id: chatgpt
-        uses: kiran-godse/chatdocument@main
+        uses: Swapnil-Devops/chatdocument@main
         with:
           prompt: "what is github action"
           api_key: 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
