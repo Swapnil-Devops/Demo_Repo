@@ -24,4 +24,4 @@ jobs:
         uses: Swapnil-Devops/chatdocument@main
         with:
           prompt: "what is github action"
-          api_key: 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
+          api_key: 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
