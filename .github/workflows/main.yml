@@ -21,6 +21,7 @@ jobs:
 
       - name: chatgpt
         id: chatgpt
-        uses: Swapnil-Devops/openai-gpt3-action@main
+        uses: Swapnil-Devops/gpt@main
         with:
           prompt: "what is github action"
+          openai-api-key: dd
