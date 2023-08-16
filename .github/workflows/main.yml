@@ -24,4 +24,4 @@ jobs:
         uses: Swapnil-Devops/gpt@main
         with:
           prompt: "what is github action"
-          openai-api-key: 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
+          openai-api-key: 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
