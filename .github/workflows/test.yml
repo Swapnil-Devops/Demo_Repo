@@ -1,0 +1,20 @@
+name: Update Discussion on Comment
+
+on:
+  discussion_comment:
+    types:
+      - created
+jobs:
+  update-discussion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get discussion information
+        id: discussion-info
+        run: |
+          echo "discussion_number=${{ github.event.client_payload.discussion_number }}" 
+          echo "body=$(echo '${{ toJson(github.event.client_payload.comment) }}' | jq -r '.body')" 
+      
+        
