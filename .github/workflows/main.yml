@@ -16,12 +16,14 @@ jobs:
         with:
           node-version: "16"
 
-      # - name: Install dependencies
-      #   run: npm install
+      - name: Install dependencies
+        run: echo "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
 
-      - name: chatgpt
-        id: chatgpt
-        uses: Swapnil-Devops/chatdocument@main
-        with:
-          prompt: "what is github action"
-          api_key: ${{ secrets.API_KEY }}
+      # - name: chatgpt
+      #   id: chatgpt
+      #   uses: Swapnil-Devops/chatdocument@main
+      #   with:
+      #     prompt: "what is github action"
+      #     api_key: ${{ secrets.API_KEY }}
