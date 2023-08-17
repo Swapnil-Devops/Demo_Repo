@@ -14,7 +14,6 @@ jobs:
       - name: Get discussion information
         id: discussion-info
         run: |
-          echo "discussion_number=${{ github.event.client_payload.discussion_number }}" 
-          echo "body=$(echo '${{ toJson(github.event.client_payload.comment) }}' | jq -r '.body')" 
+           echo '${{ toJson(github.event)'
       
         
