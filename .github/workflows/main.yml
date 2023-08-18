@@ -28,8 +28,8 @@ jobs:
                  body
                }
              }         
-          owner: ${{ github.repository_owner }}
-          repo: ${{ github.event.repository.name }}
+          # owner: ${{ github.repository_owner }}
+          # repo: ${{ github.event.repository.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
