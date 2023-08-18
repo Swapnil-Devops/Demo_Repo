@@ -23,7 +23,7 @@ jobs:
           query: |
             query {
              repository(owner: "Swapnil-Devops", name: "test_repo") {
-               discussion(number: 1) {
+               discussion(number: 3) {
                  title
                  body
                  }
