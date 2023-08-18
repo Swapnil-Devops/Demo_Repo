@@ -23,7 +23,7 @@ jobs:
           query: |
             query discussion($owner: String!, $repo: String!, $number: Int!) {
              repository(owner: $owner, name: $repo) {
-               discussion(number: 51) {
+               discussion(number: 1) {
                  title
                  body
                }
