@@ -33,7 +33,7 @@ jobs:
           # repo: ${{ github.event.repository.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: echo "'${{ steps.get_discussion_info.outputs.data }}'| jq 'repository.discussion.body'"
+      - run: echo '${{ steps.get_discussion_info.outputs.data }}'| jq 'repository.discussion.body'
 
       # - name: chatgpt
       #   id: chatgpt
