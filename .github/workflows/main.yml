@@ -21,8 +21,8 @@ jobs:
         id: get_discussion_info
         with:
           query: |
-            query discussion($owner: String!, $repo: String!, $number: Int!) {
-             repository(owner: $owner, name: $repo) {
+            query {
+             repository(owner: "Swapnil-Devops", name: "test_repo") {
                discussion(number: 1) {
                  title
                  body
