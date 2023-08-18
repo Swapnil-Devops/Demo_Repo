@@ -42,6 +42,6 @@ jobs:
       - name: Get Blurb discussion information body 
         id: Blurb_body
         run: echo "Blurb_body=$(echo'${{ steps.get_discussion_info.outputs.data }}' | jq -r '.repository.discussion.body')" >> $GITHUB_OUTPUT  
-      - run: echo "Blurb_body"  
+      - run: echo "${{ steps.Blurb_body.outputs.Blurb_body}}"  
       
         
