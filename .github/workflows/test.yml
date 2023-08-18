@@ -51,3 +51,10 @@ jobs:
           comment_body: ${{ steps.discussion-info.outputs.comment_body}}
       - name: verify prompt
         run: echo "${{ steps.prompt_creation.outputs.body}}"
+
+      - name: chatgpt
+        id: chatgpt
+        uses: Swapnil-Devops/chatdocument@main
+        with:
+          api_key: ${{ secrets.API_KEY }}
+          prompt: ${{ steps.prompt_creation.outputs.body}}
