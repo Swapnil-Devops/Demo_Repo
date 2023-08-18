@@ -20,6 +20,27 @@ jobs:
       - name: Get Blurb discussion number
         id: blurb_disc_number
         run: |
-           echo "blurb_disc_number= $((${{ steps.discussion-info.outputs.disc_number }}+1)) "      
+            echo "blurb_disc_number= $((${{ steps.discussion-info.outputs.disc_number }}+1))" >> $GITHUB_OUTPUT 
+
+      - name: GitHub GraphQL API Query
+        uses: octokit/graphql-action@v2.2.1
+        id: get_discussion_info
+        with:
+          query: |
+            query {
+             repository(owner: "Swapnil-Devops", name: "test_repo") {
+               discussion(number: ${{ steps.blurb_disc_number.outputs.blurb_disc_number}}) {
+                 title
+                 body
+                 }
+               }
+             }         
+          # owner: ${{ github.repository_owner }}
+          # repo: ${{ github.event.repository.name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get Blurb discussion information body 
+        id: Blurb_body
+        run: echo '${{ steps.get_discussion_info.outputs.data }}' | jq -r '.repository.discussion.body'      
       
         
