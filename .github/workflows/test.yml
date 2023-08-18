@@ -14,7 +14,7 @@ jobs:
       - name: Get discussion information
         id: discussion-info
         run: |
-           echo '${{ toJson(github.event)}}'| jq '.comment.body'
-           echo '${{ toJson(github.event)}}'| jq '.discussion.number'
+           echo "comment_body=$(echo '${{ toJson(github.event) }}' | jq '.comment.body')" >> $GITHUB_OUTPUT
+           echo "disc_number=$(echo '${{ toJson(github.event) }}' | jq '.discussion.number')" >> $GITHUB_OUTPUT
       
         
