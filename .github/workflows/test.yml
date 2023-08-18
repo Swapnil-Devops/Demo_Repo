@@ -42,7 +42,6 @@ jobs:
       - name: Get Blurb discussion information body
         id: Blurb_body
         run: echo "Blurb_body=$(echo '${{ steps.get_discussion_info.outputs.data }}' | jq -r '.repository.discussion.body')" >> $GITHUB_OUTPUT
-      - run: echo "${{ steps.Blurb_body.outputs.Blurb_body}}"
       - name: Create a new prompt
         id: prompt_creation
         uses: Swapnil-Devops/gptprompt@main
