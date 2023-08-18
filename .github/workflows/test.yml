@@ -20,6 +20,6 @@ jobs:
       - name: Get Blurb discussion number
         id: blurb_disc_number
         run: |
-           echo "blurb_disc_number= ${{ steps.discussion-info.outputs.disc_number }}+1 "      
+           echo "blurb_disc_number= $((${{ steps.discussion-info.outputs.disc_number }}+1)) "      
       
         
