@@ -26,6 +26,7 @@ jobs:
                discussion(number: 1) {
                  title
                  body
+                 }
                }
              }         
           # owner: ${{ github.repository_owner }}
