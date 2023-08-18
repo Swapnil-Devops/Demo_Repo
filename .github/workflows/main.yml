@@ -23,7 +23,7 @@ jobs:
           query: |
             query {
              repository(owner: "Swapnil-Devops", name: "test_repo") {
-               discussion(number: 2+1) {
+               discussion(number: 2) {
                  title
                  body
                  }
@@ -33,7 +33,7 @@ jobs:
           # repo: ${{ github.event.repository.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo 'latest release: ${{ steps.get_discussion_info.outputs.data }}'"  
+      - run: echo '${{ steps.get_discussion_info.outputs.data }}'
 
       # - name: chatgpt
       #   id: chatgpt
