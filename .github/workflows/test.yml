@@ -16,5 +16,10 @@ jobs:
         run: |
            echo "comment_body=$(echo '${{ toJson(github.event) }}' | jq '.comment.body')" >> $GITHUB_OUTPUT
            echo "disc_number=$(echo '${{ toJson(github.event) }}' | jq '.discussion.number')" >> $GITHUB_OUTPUT
+
+      - name: Get Blurb discussion number
+        id: blurb_disc_number
+        run: |
+           echo "blurb_disc_number= ${{ steps.discussion-info.outputs.disc_number }}+1 "      
       
         
