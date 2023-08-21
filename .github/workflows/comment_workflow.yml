@@ -1,4 +1,4 @@
-name: Update Discussion on Comment
+name: Discussion on Comment
 
 on:
   discussion_comment:
