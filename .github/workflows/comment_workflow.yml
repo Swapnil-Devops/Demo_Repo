@@ -73,5 +73,5 @@ jobs:
         uses: Swapnil-Devops/updateblurb@main
         with:
           PAT:  ${{ secrets.GITHUB_TOKEN }}
-          updatedbody: ${{ steps.chatgpt.outputs.body }}
+          updatedbody: Updated Blurb Discussion
           discussionId: ${{ steps.discussion-info.outputs.disc_ID}}   
