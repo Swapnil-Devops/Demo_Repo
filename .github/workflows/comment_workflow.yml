@@ -1,13 +1,14 @@
-name: Comment_workflow
+name: Update Discussion on Comment
 
 on:
   discussion_comment:
     types:
       - created
+      
 jobs:
   update-discussion:
     if: >-
-      github.event.discussion.category.name == 'Ideas'
+      github.event.discussion.category.name == 'General'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -66,8 +67,8 @@ jobs:
 
       - name: Update Blurb Discussion
         id: update_Blurb
-        uses: Swapnil-Devops/updateblurb@main
+        uses: kiran-godse/updateblurb@main
         with:
           PAT:  ${{ secrets.GITHUB_TOKEN }}
-          blurb_body: ${{ steps.chatgpt.outputs.body }}
+          updatedbody: ${{ steps.chatgpt.outputs.body }}
           discussionId: ${{ steps.discussion-info.outputs.disc_ID}}   
