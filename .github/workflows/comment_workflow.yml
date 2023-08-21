@@ -70,7 +70,7 @@ jobs:
 
       - name: Update Blurb Discussion
         id: update_Blurb
-        uses: kiran-godse/updateblurb@main
+        uses: Swapnil-Devops/updateblurb@main
         with:
           PAT:  ${{ secrets.GITHUB_TOKEN }}
           updatedbody: ${{ steps.chatgpt.outputs.body }}
